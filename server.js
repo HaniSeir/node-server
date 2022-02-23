@@ -17,6 +17,7 @@ httpServer.get('/student/:id', (req, res, next) => {
         res.status(500).json({ status: "Error", message: 'Student not found' })
     }
 })
+httpServer.use(express.json())
 httpServer.post('/student', (req, res, next) => {
     let student = req.body;
     try {
